@@ -1,5 +1,6 @@
 # Speech-To-Speech-and-Internet-Search-For-LMStudio
-This is a Delphi Rio project that allows you rLM Studio models internet access and voice recognition and speech-to-speech capabilities in 90 languages with over 1400 AI voices.
+This is a Delphi Rio project that enables your LM Studio models to search the internet for up to date information. 
+Bringing speech to speech capabilities in 90 languages with over 1400 AI voices.
 
 ## Features
 - Internet access functionality using WebView4Delphi
