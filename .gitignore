@@ -1,0 +1,23 @@
+# Delphi
+*.dcu
+*.local
+*.map
+*.rsm
+*.identcache
+*.obj
+*.res
+*.cfg
+*.groupproj.local
+*.groupproj.#*
+*.drc
+*.stat
+*.il?
+*.tds
+*.bak
+*.log
+*.~*
+*.ddp
+
+# OS files
+.DS_Store
+Thumbs.db
