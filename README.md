@@ -6,6 +6,7 @@ Bringing speech to speech capabilities in 90 languages with over 1400 AI voices.
 - Internet access functionality using WebView4Delphi
 - Voice recognition integration
 - Speech-to-speech functionality for enhanced interaction
+- Video https://www.youtube.com/watch?v=l1uYTuZoB6Q
 
 ## Requirements
 - Delphi Rio
