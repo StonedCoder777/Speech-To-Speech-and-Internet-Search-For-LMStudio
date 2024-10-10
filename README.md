@@ -1,4 +1,4 @@
-# Speech-To-Speech-and-Internet-Search-Fro-LMStudio
+# Speech-To-Speech-and-Internet-Search-For-LMStudio
 This is a Delphi Rio project that allows you rLM Studio models internet access and voice recognition and speech-to-speech capabilities in 90 languages with over 1400 AI voices.
 
 ## Features
@@ -15,4 +15,4 @@ This is a Delphi Rio project that allows you rLM Studio models internet access a
 ## Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/StonedCoder777/Speech-To-Speech-and-Internet-Search-Fro-LMStudio.git
+   git clone https://github.com/StonedCoder777/Speech-To-Speech-and-Internet-Search-For-LMStudio.git
