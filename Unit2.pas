@@ -34,6 +34,9 @@ type
     procedure WVBrowser1AfterCreated(Sender: TObject);
     procedure WVBrowser1WebMessageReceived(Sender: TObject; const aWebView: ICoreWebView2; const aArgs: ICoreWebView2WebMessageReceivedEventArgs);
     Procedure Myshow;
+    procedure WVBrowser1DOMContentLoaded(Sender: TObject;
+      const aWebView: ICoreWebView2;
+      const aArgs: ICoreWebView2DOMContentLoadedEventArgs);
   private
     { Private declarations }
 
@@ -161,6 +164,21 @@ begin
   'var interim_transcript = '''';' + #13#10 +
   'var timeout;  // This will hold the timeout function' + #13#10 +
   '' + #13#10 +
+
+
+ '// Synchronize recognition language with dropdown values' + #13#10 +
+  'var languageSelect = document.getElementById(''select_language'');' + #13#10 +
+  'var dialectSelect = document.getElementById(''select_dialect'');' + #13#10 +
+  'if (languageSelect && dialectSelect) {' + #13#10 +
+  '    var languageIndex = languageSelect.selectedIndex;' + #13#10 +
+  '    var dialectValue = dialectSelect.value;' + #13#10 +
+  '    recognition.lang = dialectValue || languageSelect.options[languageIndex].value;' + #13#10 +
+  '}' + #13#10 +
+  '' + #13#10 +
+
+
+
+
   '// Add event listeners for start and end of speech recognition' + #13#10 +
 
   'recognition.start();' + #13#10 +
@@ -371,6 +389,22 @@ begin
   WVBrowser1.Navigate('https://www.google.com/intl/en/chrome/demos/speech.html');
   WVWindowParent1.UpdateSize;
 end;
+procedure TForm2.WVBrowser1DOMContentLoaded(Sender: TObject;
+  const aWebView: ICoreWebView2;
+  const aArgs: ICoreWebView2DOMContentLoadedEventArgs);
+  var js:string;
+begin
+   // Make Sure we Hid The Mic Button And Cahnge The H1 Header
+ js:=  'document.getElementById("start_button").style.display = "none";' + #13#10 +
+  'var firstH1 = document.querySelector(''h1'');' + #13#10 +
+  'if (firstH1) { ' + #13#10 +
+  '    firstH1.textContent = ''Voice Recognition for LM Studio'';' + #13#10 +
+  '}' ;
+
+     if Assigned(WVBrowser1) then  WVBrowser1.ExecuteScript(js);
+
+end;
+
 //------------------------------------------------------------------------------
 
 // If  micaccessgranted.txt Doesn't exist then create it. This is the flag that
