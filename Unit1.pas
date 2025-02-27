@@ -309,7 +309,8 @@ var
 begin
 addconvo:=True;
 SystemPrompt := Memo4.Text;
-
+
+
  // We do not want to show the message in the chat window if we are sending the text extracted from a webpage and asking for a summerization
  if MyShowMessage then
    Begin
